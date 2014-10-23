@@ -8,6 +8,10 @@
 
 using namespace std;
 
+/**
+* @author Shaola Ren
+*/
+
 #define RESET 0
 #define PAN 1
 #define ZOOM 2
