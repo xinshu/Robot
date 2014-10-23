@@ -5,9 +5,9 @@ A project in computer graphics
 
 Demo Use Instruction (Robot.exe is in .\Debug.):
 
-1. Double click Robot.exe.
+Double click Robot.exe.
 
-2. Right click mouse will give a menu with 6 choices:
+Right click mouse will give a menu with 6 choices:
 
 Reset: as it means, when the view state is change, select this "Reset", the scence will go back 
 to the initial state.
@@ -25,7 +25,7 @@ Change Scene: select this, the floor texture will change randomly among totally 
 
 Change View Mode: select it, the scene will toggle between the default perspective view and an orthogonal view.
 
-3. Change body pose:
+Change body pose:
 
 This function is accomplished by combining mouse and key board, "a" - head, "b" - neck, "c" - 
 left shoulder, "d" - right sholder, "e" - left upper arm, "f" right upper arm, "g" - left lower 
@@ -35,6 +35,6 @@ hold on the corresponding key and hold on the left key of mouse to move left and
 screen to change the body pose, some can change from 0 to 360 degrees, some from -90 to 90 
 degree, some from 0 to 180 degrees.
 
-4. A reference object - an orange sphere is presented to distinguish left and right.
+A reference object - an orange sphere is presented to distinguish left and right.
 
 
