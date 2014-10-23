@@ -23,6 +23,7 @@ GLuint texture[6];
 
 double eyePosition[] = {0, 0, 2.0};
 double viewAngle = 60, factor = 1.0, alpha = 0, beta = 0, gamma = 0;
+double dx = 0, dy = 0, dz = 0;
 int winWidth = 640, winHeight = 480;
 double angle = 0;
 int rotateAxis = 0;
@@ -272,24 +273,18 @@ void myMouseMotion(int x, int y) {
     switch (choice) {
     case 1:
         if (pan) {
-            if (abs(x - oldx) > abs(y - oldy))
-                eyePosition[0] += (x - oldx) * 5.0 / glutGet(GLUT_SCREEN_WIDTH);
-            else 
-                eyePosition[1] -= (y - oldy) * 5.0 / glutGet(GLUT_SCREEN_HEIGHT);
+            dx += (x - oldx) * 5.0 / glutGet(GLUT_SCREEN_WIDTH);
+            dy -= (y - oldy) * 5.0 / glutGet(GLUT_SCREEN_HEIGHT);
         }
         break;
     case 2:
-        /*factor += (x - oldx) * 2.0 / glutGet(GLUT_SCREEN_WIDTH);
-        if (factor > 3.0) factor = 3.0;
-        else if (factor < 0.3) factor = 0.3;
-        viewAngle = 60 * factor;*/
         if (zoom) eyePosition[2] += (x - oldx) * 5.0 / glutGet(GLUT_SCREEN_WIDTH);
         break;
     case 3:
-        angle -= 2.0 * ((double)x - oldx);
+        angle += 2.0 * ((double)x - oldx);
         switch (rotateAxis) {
         case 1:
-            alpha = angle;
+            alpha = -angle;
             break;
         case 2:
             beta = angle;
@@ -697,6 +692,8 @@ void displayRobot(void) {
     glRotated(alpha, 1, 0, 0);
     glRotated(beta, 0, 1, 0);
     glRotated(gamma, 0, 0, 1);
+
+    glTranslated(dx, dy, 0);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
