@@ -35,6 +35,6 @@ hold on the corresponding key and hold on the left key of mouse to move left and
 screen to change the body pose, some can change from 0 to 360 degrees, some from -90 to 90 
 degree, some from 0 to 180 degrees.
 
-d. A reference object - an orange sphere is presented to distinguish left and right.
+4. A reference object - an orange sphere is presented to distinguish left and right.
 
 
